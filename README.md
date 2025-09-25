@@ -21,6 +21,8 @@ Calc - V3
 
 SRS-OS WIP
 
+CCGT - maybe working
+
 # More Info
 
 MotionSens - Uses the opencomputers motion sensors and discord webhooks to send messages directly into a channel. Supports multiple sensors and requires tier 2 parts. V1.0.2
@@ -41,7 +43,7 @@ Calc - its a fucking calculator
 
 SRS-OS - Custom OS
 
-
+CCGT - Combined Cycle Gooning Turbine for the combined cycle gay turbines
 
 
 ***For anymore information please check the wiki***
