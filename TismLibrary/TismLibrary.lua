@@ -33,7 +33,7 @@ if choice and programs[choice] then
   local selected = programs[choice]
   print(string.format("\nInstalling %s...\n", selected.name))
   os.execute(selected.install)
-  print("\nInstallation complete. Consider checking out the github at https://github.com/TNTCreep/OpenTismTech1")
+  print("\nInstallation complete. Consider checking out the github at https://github.com/TNTCreep/OpenTismTech2")
 else
   print("\nInvalid selection. Please run the installer again and choose a valid option.")
 end
