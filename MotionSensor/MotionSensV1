@@ -1,0 +1,56 @@
+local component = require("component")
+local event = require("event")
+local internet = require("internet")
+ 
+local motion_sensor = component.motion_sensor
+local url = ""
+ 
+print("Listening for motion events...")
+ 
+local function jsonEscape(str)
+    local replacements = {
+        ['"'] = '\\"',
+        ['\\'] = '\\\\',
+        ['\b'] = '\\b',
+        ['\f'] = '\\f',
+        ['\n'] = '\\n',
+        ['\r'] = '\\r',
+        ['\t'] = '\\t',
+    }
+    return str:gsub('[\\"%z\b\f\n\r\t]', replacements)
+end
+ 
+local function sendDiscordMessage(message)
+    local escapedMessage = jsonEscape(message)
+    local data = '{"content": "' .. escapedMessage .. '"}'
+    local headers = {
+        ["Content-Type"] = "application/json",
+        ["User-Agent"] = "Mozilla/5.0 (compatible; OpenComputers/1.8.8)"
+    }
+ 
+    local success, response_or_err = pcall(function()
+        local response = internet.request(url, data, headers, "POST")
+        local result = ""
+        for chunk in response do
+            result = result .. chunk
+        end
+        return result
+    end)
+ 
+    if success then
+        print("Message sent to Discord! Response: " .. response_or_err)
+    else
+        print("Failed to send message! Error1: " .. tostring(response_or_err))
+    end
+end
+ 
+while true do
+    local ev, _, uuid, x, y, z = event.pull("motion")
+    if uuid then
+        local message = "Motion detected \nEntity UUID: " .. tostring(uuid) .. "\nPosition: (" .. tostring(x) .. ", " .. tostring(y) .. ", " .. tostring(z) .. ")"
+        print(message)
+        sendDiscordMessage(message)
+    else
+        print("Motion event triggered but no uuid found ERROR2")
+    end
+end

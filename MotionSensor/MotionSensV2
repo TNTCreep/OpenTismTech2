@@ -1,0 +1,90 @@
+local component = require("component")
+local event = require("event")
+local internet = require("internet")
+local computer = require("computer")
+local filesystem = require("filesystem")
+
+local motion_sensor = component.motion_sensor
+local url = "url"  -- Your Discord webhook URL here
+
+print("Listening for motion events...")
+
+local function jsonEscape(str)
+    local replacements = {
+        ['"'] = '\\"',
+        ['\\'] = '\\\\',
+        ['\b'] = '\\b',
+        ['\f'] = '\\f',
+        ['\n'] = '\\n',
+        ['\r'] = '\\r',
+        ['\t'] = '\\t',
+    }
+    return str:gsub('[\\"%z\b\f\n\r\t]', replacements)
+end
+
+local function sendDiscordMessage(message)
+    local escapedMessage = jsonEscape(message)
+    local data = '{"content": "' .. escapedMessage .. '"}'
+    local headers = {
+        ["Content-Type"] = "application/json",
+        ["User-Agent"] = "Mozilla/5.0 (compatible; OpenComputers/1.8.8)"
+    }
+
+    local success, response_or_err = pcall(function()
+        local response = internet.request(url, data, headers, "POST")
+        local result = ""
+        for chunk in response do
+            result = result .. chunk
+        end
+        return result
+    end)
+
+    if success then
+        print("Message sent to Discord! Response: " .. response_or_err)
+        -- Play beep sound on success
+        computer.beep(1000, 0.2) -- frequency: 1000 Hz, duration: 0.2 seconds
+    else
+        print("Failed to send message! Error: " .. tostring(response_or_err))
+        -- Optional: beep differently on failure
+        computer.beep(400, 0.4)
+    end
+end
+
+-- Function to log message locally with timestamp
+local function logMotionMessage(message)
+    local logPath = "motion_log.txt"
+    local file, err = io.open(logPath, "a")
+    if file then
+        local timestamp = os.date("%Y-%m-%d %H:%M:%S")
+        file:write("[" .. timestamp .. "] " .. message .. "\n")
+        file:close()
+    else
+        print("Error opening log file: " .. tostring(err))
+    end
+end
+
+-- Send program started message once
+local startMsg = "Motion sensor program has started!"
+sendDiscordMessage(startMsg)
+logMotionMessage(startMsg)
+
+local lastSentTime = 0
+local cooldown = 1  -- cooldown in seconds
+
+while true do
+    local ev, _, uuid, x, y, z = event.pull("motion")
+    if uuid then
+        local currentTime = computer.uptime()
+        if currentTime - lastSentTime >= cooldown then
+            local message = "Motion detected \nEntity UUID: " .. tostring(uuid) .. "\nPosition: (" .. tostring(x) .. ", " .. tostring(y) .. ", " .. tostring(z) .. ")"
+            print(message)
+            sendDiscordMessage(message)
+            logMotionMessage(message)
+            lastSentTime = currentTime
+        else
+            print("Motion detected but cooldown active. Skipping message.")
+        end
+    else
+        print("Motion event triggered but no uuid found ERROR2")
+    end
+end
