@@ -23,6 +23,8 @@ SRS-OS WIP
 
 CCGT - maybe working
 
+加壓沸水反應器 - PWR program
+
 # More Info
 
 MotionSens - Uses the opencomputers motion sensors and discord webhooks to send messages directly into a channel. Supports multiple sensors and requires tier 2 parts. V1.0.2
@@ -45,5 +47,6 @@ SRS-OS - Custom OS
 
 CCGT - Combined Cycle Gooning Turbine for the combined cycle gay turbines
 
+加壓沸水反應器 - PWR Program wip
 
 ***For anymore information please check the wiki***
