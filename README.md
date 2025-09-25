@@ -1,4 +1,4 @@
 # OpenTismTech2
 legally acquired stuff trust me gang for the second time
 
-ling gang gooli gooli gooli wacha
+ling gang gooli gooli gooli wacha testy
