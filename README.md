@@ -11,7 +11,7 @@ SecuCODEX+ -WIP
 
 SecuROM+ - WIP
 
-OpenRBMK - Alpha
+DyatlovAZ-5 - WIP
 
 TismLibary - WIP
 
@@ -29,7 +29,7 @@ SecuCODEX+ - Upgraded version of SecuCODEX - WIP
 
 SecuROM+ - Upgraded version of SecuCODEX - WIP
 
-OpenRBMK - Opencomputer compatibility with a HBM NTM Extended RBMK. Alpha
+DyatlovAZ-5 - Opencomputer compatibility with a HBM NTM Extended RBMK. Alpha
 
 TismLibary - installer for all my installers
 
