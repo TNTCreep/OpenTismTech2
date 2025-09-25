@@ -15,6 +15,10 @@ OpenRBMK - Alpha
 
 TismLibary - WIP
 
+SRSCMS - WIP
+
+Calc - V3
+
 # More Info
 
 MotionSens - Uses the opencomputers motion sensors and discord webhooks to send messages directly into a channel. Supports multiple sensors and requires tier 2 parts. V1.0.2
@@ -29,7 +33,9 @@ OpenRBMK - Opencomputer compatibility with a HBM NTM Extended RBMK. Alpha
 
 TismLibary - installer for all my installers
 
+SRSCMS - wip 
 
+Calc - its a fucking calculator
 
 
 ***For anymore information please check the wiki***
