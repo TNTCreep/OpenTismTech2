@@ -19,6 +19,8 @@ SRSCMS - WIP
 
 Calc - V3
 
+SRS-OS WIP
+
 # More Info
 
 MotionSens - Uses the opencomputers motion sensors and discord webhooks to send messages directly into a channel. Supports multiple sensors and requires tier 2 parts. V1.0.2
@@ -36,6 +38,10 @@ TismLibary - installer for all my installers
 SRSCMS - wip 
 
 Calc - its a fucking calculator
+
+SRS-OS - Custom OS
+
+
 
 
 ***For anymore information please check the wiki***
