@@ -1,6 +1,8 @@
 # OpenTismTech2
 legally acquired stuff trust me gang for the second time
 
+Anyone 1.7.10 are on halt until NTMCE is updated enough and yk not breakign when u place down a partical detector
+
 Currently Contains
 
 MotionSens - V2.1.5
@@ -21,9 +23,9 @@ Calc - V3
 
 SRS-OS WIP
 
-CCGT - maybe working
+CCGT - maybe working needs to be tested
 
-加壓沸水反應器 - PWR program
+加壓沸水反應器 - PWR program WIP
 
 # More Info
 
