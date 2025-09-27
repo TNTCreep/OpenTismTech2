@@ -15,7 +15,7 @@ SecuROM+ - WIP
 
 DyatlovAZ-5 - WIP
 
-TismLibary - WIP
+TismLibary - WIP - works for liek 2 things currently remaking cuz im retarded
 
 SRSCMS - WIP
 
