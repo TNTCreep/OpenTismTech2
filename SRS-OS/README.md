@@ -1,9 +1,9 @@
-# TherOS
+# SRS-OS
 Lightweight OS for OpenComputers
 
 ## INSTALLATION
 
-TherOS requires:
+SRS-OS requires:
 - A working computer
 - OpenOS
 - A tier 2 or higher screen (tier 1 screens dont allow touch input)
@@ -15,18 +15,14 @@ TherOS requires:
 
 2 - Reboot
 
-3 - Run ```wget https://raw.githubusercontent.com/Tavyza/TherOS/main/sys/apps/installer.lua && installer``` in the shell
+3 - Run `````` in the shell
 
 4 - Install from github
 
 Congratulations! you installed TherOS.
 
 ## LINKS
-[TOCR](https://github.com/Tavyza/TherOS_community_repo) (TherOS Community Repository)
 
-[Wiki](https://github.com/Tavyza/TherOS/wiki/)
+[Wiki]
 
 -------------------------------------------
-
-PLEASE REPORT ALL BUGS IN THE ISSUES SECTION OF GITHUB.
-
