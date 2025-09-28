@@ -19,8 +19,6 @@ SRS-OS requires:
 
 4 - Install from github
 
-Congratulations! you installed TherOS.
-
 ## LINKS
 
 [Wiki]
