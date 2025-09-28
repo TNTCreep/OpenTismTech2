@@ -1,4 +1,4 @@
--- TherOS general lib
+-- SRS-OS general lib
 local fs = require("filesystem")
 local gpu = require("component").gpu
 local w, h = gpu.getResolution()
