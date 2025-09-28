@@ -1,4 +1,4 @@
--- conlib for TherOS
+-- conlib for SRS-OS
 conlib = {}
 configfile = io.open("/sys/.config/general.tc", "r")
 fullfile = configfile:read("*a")
