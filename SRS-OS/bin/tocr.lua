@@ -1,4 +1,4 @@
--- TherOS community repository package manager
+-- SRS-OS community repository package manager
 list = io.open("/sys/.config/tocrlist.tc", "w")
 local shell = require("shell")
 local fs = require("filesystem")
@@ -22,7 +22,7 @@ if ops.i or ops.install then
     fs.makeDirectory("/usr/bin/")
     fs.makeDirectory("/usr/lib/")
     print("Checking for dependencies...")
-    shell.execute("wget -q https://raw.githubusercontent.com/Tavyza/TherOS_community_repo/main/" .. package .. "/dependencies.tc /tmp/dependencies.tc")
+    shell.execute("")
     file = io.open("/tmp/dependencies.tc", "r")
     deps = file:read("*a")
     table.insert(deptab, deps)
@@ -38,7 +38,7 @@ if ops.i or ops.install then
     end
     print("Installing package " .. package .. "...")
     pkin = {}
-    shell.execute("wget -q https://raw.githubusercontent.com/Tavyza/TherOS_community_repo/main/" .. package .. "/package.tc /tmp/package.tc")
+    shell.execute("")
     pk = io.open("/tmp/package.tc", "r")
     for pak in pk:gmatch("[^\r\n]+") do
       if pak ~= "" then
