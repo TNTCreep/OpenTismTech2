@@ -1,4 +1,4 @@
--- TherOS text centering library
+-- SRS-OS text centering library
 local gpu = require("component").gpu
 local conf = require("conlib")
 
