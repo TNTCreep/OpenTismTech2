@@ -5,5 +5,5 @@ gpu.setBackground(bkgclr)
 gpu.fill(1, 1, w, h, " ")
 
 local sysver = require("conlib").version()
-require("centertext")(h/2, "Welcome to TherOS " .. sysver)
+require("centertext")(h/2, "Welcome to SRS-OS " .. sysver)
 pcall(loadfile("/sys/env/main.lua")(loadfile))
